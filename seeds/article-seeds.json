@@ -1,0 +1,25 @@
+[
+  {
+    "title": "How Much Ram is Necessary",
+    "content": "Is 16gb the new standard?",
+    "user_id": 1
+  },
+
+  {
+    "title": "Chip Shortage Effects Global Supply of Graphics Cards",
+    "content": "When is the chip shortage expected to end?",
+    "user_id": 1
+  },
+
+  {
+    "title": "Is The Iphone in Trouble?",
+    "content": "How will the Tesla PI phone effect Iphone sales?",
+    "user_id": 2
+  },
+
+  {
+    "title": "Xbox Developer Mode",
+    "content": "Is the Xbox the ultimate emulator?",
+    "user_id": 3
+  }
+]

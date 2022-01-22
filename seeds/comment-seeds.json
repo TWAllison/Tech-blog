@@ -1,0 +1,19 @@
+[
+  {
+    "content": "This is a Test",
+    "user_id": 1,
+    "article_id": 1
+  },
+
+  {
+    "content": "Test for comments",
+    "user_id": 1,
+    "article_id": 2
+  },
+
+  {
+    "content": "Testing out the comment section",
+    "user_id": 3,
+    "article_id": 1
+  }
+]
