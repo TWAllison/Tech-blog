@@ -20,11 +20,13 @@ const updateCommentHandler = async (event) => {
   }
 };
 
-const cancelBtnHandler = async () => { window.history.back();}
+const cancelBtnHandler = async () => {
+  window.history.back();
+};
 
 document
-.querySelector('.updateCommentForm')
-.addEventListener('submit', updateCommentHandler);
+  .querySelector(".updateCommentForm")
+  .addEventListener("submit", updateCommentHandler);
 document
-.querySelector('updateCommentForm')
-.addEventListener('reset', cancelBtnHandler)
+  .querySelector("updateCommentForm")
+  .addEventListener("reset", cancelBtnHandler);
