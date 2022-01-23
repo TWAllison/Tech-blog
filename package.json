@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/TWAllison/Tech-blog#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "cookies": "^0.8.0",
     "dotenv": "^14.1.0",
