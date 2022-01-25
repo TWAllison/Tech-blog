@@ -17,16 +17,11 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'i like tacos',
-    cookies: {
-        maxAge: 60 * 60 *1000,
-        httpOnly: true,
-        secure: false,
-        sameSite: 'strict',
-    },
+    cookies: {},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize
+        db:sequelize
     })
 };
 
@@ -36,7 +31,7 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.json());
-app.use(express.urlencoded({ extend: true}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
