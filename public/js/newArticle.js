@@ -2,8 +2,8 @@
 const newArticleHandler = async (event) => {
   event.preventDefault();
 
-  const articleTitle = document.getElementById("newArticleTitle").value.trim();
-  const articleBody = document.getElementById("newArticleContent").value.trim();
+  const articleTitle = document.getElementById("new-Article-Title").value.trim();
+  const articleBody = document.getElementById("new-Article-Content").value.trim();
 
   if (articleTitle && articleBody) {
     const response = await fetch("/api/articles/", {

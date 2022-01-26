@@ -3,12 +3,12 @@ const updateArticleHandler = async (event) => {
 
   const id = document.getElementById("btn-save").getAttribute("data-id");
   const articleTitle = document.getElementById("ArticleTitle").value.trim();
-  const articleBody = document.getElementById("ArticleContent").value.trim();
+  const articleContent = document.getElementById("ArticleContent").value.trim();
 
-  if (id && articleTitle && articleBody) {
+  if (id && articleTitle && articleContent) {
     const response = await fetch("/api/articles/", {
       method: "POST",
-      body: JSON.stringify({ articleTitle, articleBody }),
+      body: JSON.stringify({ articleTitle, articleContent }),
       headers: { "content-Type": "application/json" },
     });
     if (response.ok) {

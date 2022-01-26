@@ -1,10 +1,13 @@
 const updateCommentHandler = async (event) => {
   event.preventDefault();
 
-  if (id && commentBody) {
+  const id = document.getElementById('btn-save').getAttribute('data-id');
+  const commentContent = document.getElementById('commentContent').value.trim();
+
+  if (id && commentContent) {
     const response = await fetch(`/api/comments/${id}`, {
       method: "PUT",
-      body: JSON.stringify({ commentBody }),
+      body: JSON.stringify({ commentContent }),
       headers: {
         "Content-Type": "application/json",
       },
