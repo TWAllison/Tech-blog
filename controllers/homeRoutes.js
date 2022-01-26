@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 
     const articles = articleData.map((article) => article.get({ plain: true }));
 
-    res.render("homepage", {
+    res.render('homepage', {
       articles,
       logged_in: req.session.logged_in,
     });
