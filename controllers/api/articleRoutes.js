@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const withAuth = require("../../utils/auth");
 const { Article } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
   try {
@@ -51,7 +51,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     });
 
     if (!articleData) {
-      res.status(404).json({ message: "No item(s) found with this id!" });
+      res.status(404).json({ message: "No item found with this id!" });
       return;
     }
 
