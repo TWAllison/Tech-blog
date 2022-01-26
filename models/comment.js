@@ -26,6 +26,7 @@ Comment.init(
         model: "user",
         key: "id",
       },
+    },
       article_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -34,7 +35,6 @@ Comment.init(
         },
       },
     },
-  },
   {
     sequelize,
     freezeTableName: true,
