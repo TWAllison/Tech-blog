@@ -1,0 +1,139 @@
+ :root {
+    --c-silver: #c6b4ad;
+    --c-dslategray: #2e3136;
+    --c-ddslategray: #1d1f22;
+    --c-frenchblue: #3078b4;
+    --c-dfrenchblue: #276292;
+    --c-ddfrenchblue: #1a4a70;
+    --c-white: #ffffff;
+    --c-whitesmoke: #f5f5f5;
+}   
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--c-ddslategray);
+    height: 100vh;
+}
+
+.navbar-brand {
+    font-family: 'Oswald', sans-serif;
+    font-size: xx-large;
+    text-shadow: 0px .5px var(--c-white);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: var(--c-dfrenchblue);
+    border-width: medium;
+} 
+
+main {
+    padding-top: 7rem;
+    padding-bottom: 8rem;
+    width: 100vw;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active { 
+    text-decoration: none !important;
+    color: var(--c-silver) !important;
+}
+
+a:link span,
+a:visited span,
+a:hover span,
+a:active span { 
+    color: var(--c-dfrenchblue) !important;
+}
+
+h2,
+h3, 
+h4, 
+h5 {
+    font-family: 'Oswald', serif;
+    color: var(--c-frenchblue)
+}
+
+.my-articles {
+    background-image: linear-gradient(var(--c-dslategray), var(--c-ddslategray));
+    padding: .5em;
+    border-radius: 5px;
+}
+
+.card {
+    background: var(--c-whitesmoke);
+    transition: .4s transform cubic-bezier(.155,1.105,.295,1.12),.4s box-shadow,.4s -webkit-transform cubic-bezier(.155,1.105,.295,1.12); 
+    opacity: 0.95;
+    color: var(--c-ddslategray);
+}
+
+.card:hover {
+    transform: scale(1.003);
+    border-color: var(--c-whitesmoke);
+    opacity: 1;
+    }
+
+.card-body {
+    color: var(--c-ddslategray);
+}
+
+.card.view-card:hover {
+    opacity: 1;
+}
+
+.card-header {
+    color: var(--c-silver) !important;
+    background-color: var(--c-dslategray) !important;
+}
+
+.card-header:hover {
+    background-image: linear-gradient(var(--c-dslategray), var(--c-ddslategray));
+}
+
+.signinForm.label {
+    color: var(--c-dslategray)
+}
+
+.comments {
+    background-color: var(--c-white);
+    border: 1px solid var(--c-whitesmoke);
+    padding: 1em;
+}
+
+.comment {
+    border-radius: 10px;
+    padding: 1em;
+    background-color: var(--c-whitesmoke);
+}
+
+.edit-btns-comments {
+    background-color: var(--c-whitesmoke);
+    margin: -2em 0 0 0;
+    padding: 0 0 0 1em;
+    border-radius: 10px;
+    text-align: end;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 3pt solid var(--c-ddfrenchblue);
+}
+
+.footer p {
+    padding-top: 1em;
+    color: var(--c-silver);
+
+}
