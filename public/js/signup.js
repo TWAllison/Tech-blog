@@ -1,4 +1,4 @@
-const signupHandler = async (event) => {
+const signupFormHandler = async (event) => {
   event.preventDefault();
 
   const username = document.querySelector("#username-signup").value.trim();
@@ -18,11 +18,11 @@ const signupHandler = async (event) => {
   }
 };
 
-const signinBtnHandler = async () => {
+const signinButtonHandler = async () => {
   document.location.replace("/signin");
 };
 
-document.querySelector(".signupForm").addEventListener("submit", signupHandler);
+document.querySelector(".signupForm").addEventListener("submit", signupFormHandler);
 document
   .querySelector("#btn-signin")
-  .addEventListener("submit", signinBtnHandler);
+  .addEventListener("submit", signinButtonHandler);
