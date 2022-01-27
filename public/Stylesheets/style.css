@@ -15,8 +15,12 @@ html {
 
 body {
     font-family: sans-serif;
-    color: var(--c-ddslategray);
+    color: var(--c-whitesmoke);
     height: 100vh;
+}
+
+.navBG {
+    background-image: linear-gradient(var(--c-dslategray), var(--c-ddslategray));
 }
 
 .navbar-brand {
