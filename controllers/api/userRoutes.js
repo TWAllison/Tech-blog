@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const { User } = require("../../models");
+const router = require('express').Router();
+const { User } = require('../../models');
 
-router.post("/signup", async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -17,7 +17,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-router.post("/signin", async (req, res) => {
+router.post('/signin', async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {
@@ -53,7 +53,7 @@ router.post("/signin", async (req, res) => {
   }
 });
 
-router.post("/signout", (req, res) => {
+router.post('/signout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();

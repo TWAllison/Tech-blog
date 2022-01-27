@@ -1,18 +1,18 @@
-const router = require("express").Router();
-const { Article, Comment, User } = require("../models");
-const withAuth = require("../utils/auth");
+const router = require('express').Router();
+const { Article, Comment, User } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const articleData = await Article.findAll({
       include: [
         {
           model: Comment,
-          attributes: ["content"],
+          attributes: ['content'],
         },
         {
           model: User,
-          attributes: ["username"],
+          attributes: ['username'],
         },
       ],
     });
@@ -29,44 +29,44 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/signup", (req, res) => {
+router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect('/');
     return;
   }
-  res.render("signup");
+  res.render('signup');
 });
 
-router.get("/signin", (req, res) => {
+router.get('/signin', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect('/');
     return;
   }
-  res.render("signin");
+  res.render('signin');
 });
 
-router.get("/articles/:id", async (req, res) => {
+router.get('/articles/:id', async (req, res) => {
   try {
     const articleData = await Article.findByPk(req.params.id, {
       include: [
         {
           model: Comment,
-          attributes: ["id", "content", "user_id", "created_at"],
+          attributes: ['id', 'content', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ["username"],
+            attributes: ['username'],
           },
         },
         {
           model: User,
-          attributes: ["username"],
+          attributes: ['username'],
         },
       ],
     });
 
     const articleSingle = articleData.get({ plain: true });
 
-    res.render("viewArticle", {
+    res.render('viewArticle', {
       articleSingle,
       logged_in: req.session.logged_in,
     });
@@ -76,7 +76,7 @@ router.get("/articles/:id", async (req, res) => {
   }
 });
 
-router.get("/updateComment/:id", withAuth, async (req, res) => {
+router.get('/updateComment/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
       where: {
@@ -87,7 +87,7 @@ router.get("/updateComment/:id", withAuth, async (req, res) => {
 
     const comment = commentData.get({ plain: true });
 
-    res.render("updateComment", {
+    res.render('updateComment', {
       comment,
       logged_in: req.session.logged_in,
     });

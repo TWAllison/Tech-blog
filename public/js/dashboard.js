@@ -1,10 +1,10 @@
 const addButtonHandler = async (event) => {
-  document.location.replace("dashboard/newArticle");
+  document.location.replace('dashboard/newArticle');
 };
 
 const updateButtonHandler = async (event) => {
-  if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
     document.location.replace(`/dashboard/updateArticle/${id}`);
   } else {
     alert("data-id not found");
@@ -12,13 +12,13 @@ const updateButtonHandler = async (event) => {
 };
 
 const deleteButtonHandler = async (event) => {
-  if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/articles/${id}`, { method: "DELETE" });
+    const response = await fetch(`/api/articles/${id}`, { method: 'DELETE' });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace('/dashboard');
     } else {
       alert("failed to delete article!");
     }
@@ -27,10 +27,10 @@ const deleteButtonHandler = async (event) => {
   }
 };
 
-document.querySelector("#btn-add").addEventListener("click", addButtonHandler);
+document.querySelector('#btn-add').addEventListener('click', addButtonHandler);
 document
-  .querySelector("btn-update")
-  .foreach((btn) => btn.addEventListener("click", updateButtonHandler));
+  .querySelector('btn-update')
+  .foreach((btn) => btn.addEventListener('click', updateButtonHandler));
 document
-  .querySelector("btn-delete")
+  .querySelector('btn-delete')
   .foreach((btn) => btn.addEventListener("click", deleteButtonHandler));

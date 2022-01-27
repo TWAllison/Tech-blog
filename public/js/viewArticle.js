@@ -1,16 +1,16 @@
-const newCommentHandler = async (event) => {
+const newCommentFormHandler = async (event) => {
   event.preventDefault();
 
   const article_id = document
-    .getElementById("btn-comment")
-    .getAttribute("data-id");
-  const content = document.getElementById("newCommentContent").value.trim();
+    .getElementById('btn-comment')
+    .getAttribute('data-id');
+  const content = document.getElementById('newCommentContent').value.trim();
 
   if (content) {
-    const response = await fetch("/api/comments", {
-      method: "POST",
+    const response = await fetch('/api/comments', {
+      method: 'POST',
       body: JSON.stringify({ content, article_id }),
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
       document.location.reload();
@@ -20,12 +20,12 @@ const newCommentHandler = async (event) => {
   }
 };
 
-const updateBtnHandler = async (event) => {
-  if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
+const updateButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
 
     const response = await fetch(`/api/comments/${id}`, {
-      method: "GET",
+      method: 'GET',
     });
     if (response.ok) {
       document.location.replace(`/updateComment/${id}`);
@@ -37,12 +37,12 @@ const updateBtnHandler = async (event) => {
   }
 };
 
-const deleteBtnHandler = async (event) => {
-  if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
+const deleteButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
 
     const response = await fetch(`/api/comments/${id}`, {
-      method: "DELETE",
+      method: 'DELETE',
     });
     if (response.ok) {
       document.location.reload();
@@ -54,22 +54,22 @@ const deleteBtnHandler = async (event) => {
   }
 };
 
-const cancelBtnHandler = async () => {
-  document.location.replace("/viewArticle");
+const cancelButtonHandler = async () => {
+  document.location.replace('/viewArticle');
 };
 
 document
-  .querySelector(".newCommentForm")
-  .addEventListener("submit", newCommentHandler);
+  .querySelector('.newCommentForm')
+  .addEventListener('submit', newCommentFormHandler);
 
 document
-  .querySelector("#btn-cancel")
-  .addEventListener("reset", cancelBtnHandler);
+  .querySelector('#btn-cancel')
+  .addEventListener('reset', cancelButtonHandler);
 
 document
-  .querySelectorAll(".btn-update")
-  .forEach((btn) => btn.addEventListener("click", updateBtnHandler));
+  .querySelectorAll('.btn-update')
+  .forEach((btn) => btn.addEventListener('click', updateButtonHandler));
 
 document
-  .querySelectorAll(".btn-delete")
-  .forEach((btn) => btn.addEventListener("click", deleteBtnHandler));
+  .querySelectorAll('.btn-delete')
+  .forEach((btn) => btn.addEventListener('click', deleteButtonHandler));

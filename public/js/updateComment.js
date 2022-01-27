@@ -1,4 +1,4 @@
-const updateCommentHandler = async (event) => {
+const updateCommentFormHandler = async (event) => {
   event.preventDefault();
 
   const id = document.getElementById('btn-save').getAttribute('data-id');
@@ -6,15 +6,15 @@ const updateCommentHandler = async (event) => {
 
   if (id && commentContent) {
     const response = await fetch(`/api/comments/${id}`, {
-      method: "PUT",
+      method: 'PUT',
       body: JSON.stringify({ commentContent }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace('/');
     } else {
       alert("Failed to update article.");
     }
@@ -23,13 +23,13 @@ const updateCommentHandler = async (event) => {
   }
 };
 
-const cancelBtnHandler = async () => {
+const cancelButtonHandler = async () => {
   window.history.back();
 };
 
 document
-  .querySelector(".updateCommentForm")
-  .addEventListener("submit", updateCommentHandler);
+  .querySelector('.updateCommentForm')
+  .addEventListener('submit', updateCommentFormHandler);
 document
-  .querySelector("updateCommentForm")
-  .addEventListener("reset", cancelBtnHandler);
+  .querySelector('updateCommentForm')
+  .addEventListener('reset', cancelBtnHandler);

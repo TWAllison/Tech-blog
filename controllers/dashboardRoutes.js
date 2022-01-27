@@ -34,7 +34,7 @@ router.get("/newArticle", withAuth, async (req, res) => {
   }
 });
 
-router.get("/updateArticle/:id", withAuth, async (req, res) => {
+router.get('/updateArticle/:id', withAuth, async (req, res) => {
   try {
     const articleData = await Article.findOne({
       where: {
@@ -45,7 +45,7 @@ router.get("/updateArticle/:id", withAuth, async (req, res) => {
 
     const article = articleData.get({ plain: true });
 
-    res.render("updateArticle", {
+    res.render('updateArticle', {
       article,
       logged_in: req.session.logged_in,
     });
